@@ -12,15 +12,20 @@ export const NeighborRelativePositions: number[][] = [
     [0, 1],
     [1, 0],
 ];
-export const resolvePosition = (originalBoard: number[][], x: number, y: number): number => {
+export const resolvePosition = (originalBoard: number[][], x: number, y: number, toroidal = false): number => {
     let neighbors = 0;
     let isLiving: number = originalBoard[x][y];
     const maxDimensionX = originalBoard[0].length;
     const maxDimensionY = originalBoard.length;
     for (const position of NeighborRelativePositions) {
         const [xNeighbor, yNeighbor] = position;
-        const relativeX = x + xNeighbor;
-        const relativeY = y + yNeighbor;
+        let relativeX = x + xNeighbor;
+        let relativeY = y + yNeighbor;
+        if (toroidal) {
+            // If we are on a "toroidal" map, we wrap around to the opposite end.
+            relativeX = relativeX < MIN_WIDTH ? MAX_WIDTH - 1 : relativeX >= MAX_WIDTH ? 0 : relativeX;
+            relativeY = relativeY < MIN_HEIGHT ? MAX_HEIGHT - 1 : relativeY >= MAX_HEIGHT ? 0 : relativeY;
+        }
         if (
             relativeX >= MIN_WIDTH &&
             relativeX < maxDimensionX &&
