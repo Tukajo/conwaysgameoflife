@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/conwaysgameoflife/static/css/main.073c9b0a.css",
+    "main.js": "/conwaysgameoflife/static/js/main.d7c0039c.js",
+    "static/js/787.97d14082.chunk.js": "/conwaysgameoflife/static/js/787.97d14082.chunk.js",
+    "index.html": "/conwaysgameoflife/index.html",
+    "main.073c9b0a.css.map": "/conwaysgameoflife/static/css/main.073c9b0a.css.map",
+    "main.d7c0039c.js.map": "/conwaysgameoflife/static/js/main.d7c0039c.js.map",
+    "787.97d14082.chunk.js.map": "/conwaysgameoflife/static/js/787.97d14082.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.d7c0039c.js"
+  ]
+}
